@@ -1,0 +1,22 @@
+<div class="chat-wrapper">
+  <div class="exit-wrapper">
+    <h4><%= @room.room %></h4>
+    <h4><%= link_to("退室","/post/exit") %></h4>
+    <% if "#{session[:user_id]}"==@room.user_id %>
+        <h4><%= link_to("部屋削除","/room/#{@room.id}/destroy",method: :post) %></h4>
+    <% end %>
+  </div>
+  <div class="chat-btn">
+    <%= form_tag("/room/#{@room.id}/create") do %>
+      <textarea name="content"></textarea>
+      <input type="submit" value="送信">
+    <% end %>
+  </div>
+  <% @chats.each do |chat| %>
+  <div class="chat">
+    <h4 class="name"><%= "#{chat.name}"+":" %></h4>
+    <h4 class="sentence"><%= chat.content %></h4>
+    <h2 class="time"><%=chat.created_at.to_s(:datetime_jp) %></h2>
+  </div>
+  <% end %>
+</div>

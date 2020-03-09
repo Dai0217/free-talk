@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FreeTalk2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header>
+    <div class="header-wrapper">
+      <div class="heading">
+        <h4>Free-Talk</h4>
+      </div>
+      <div class="element">
+        <h3><%= link_to("#{session[:user_name]}","/user/#{session[:user_id]}/edit") %></h3>
+        <h3>お知らせ</h3>
+        <% if session[:user_id] %>
+          <h3><%= link_to("ログアウト","/user/logout") %></h3>
+        <% end %>
+      </div>
+    </div>
+  </header>
+  <body>
+    <%= yield %>
+  </body>
+</html>

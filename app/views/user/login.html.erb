@@ -1,0 +1,22 @@
+<div class="login">
+  <img src="/ELL75_yousyohondana20120620_TP_V.jpg" alt="本">
+  <div class="container">
+    <div class="title">
+      <p>ログイン</p>
+    </div>
+    <div class="info">
+      <% if @error_message%>
+        <%= @error_message %>
+      <% end %>
+      <%= form_tag("/user/confirm") do %>
+        <h4>メールアドレス</h4>
+        <input name="email" value="<%= @email %>"></input>
+        <h4>PassWord</h4>
+        <input type="password" name="password" value="<%= @password %>"></input>
+        <br></br>
+        <a href="/user/create">新規登録はこちら</a>
+        <input class="btn" type="submit" value="ログイン">
+      <% end %>
+    </div>
+  </div>
+</div>

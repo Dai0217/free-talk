@@ -1,0 +1,26 @@
+<div class="title-wrapper">
+  <% if flash[:notice] %>
+    <div class="error"><h4><%= flash[:notice] %></h4></div>
+  <% end %>
+  <div class="post-wrapper">
+    <div class="make">
+      <input class="btn create" onClick='location.href="/post/create"' type="button" value="部屋作成">
+      <h4>待合室</h4>
+      <%= form_tag("/room/search") do %>
+        <input name="name">
+        <input type="submit" value="検索">
+      <% end %>
+    </div>
+    <% @rooms.each do |room| %>
+      <div class="room-wrapper">
+        <h4>部屋名</h4>
+        <div class="room"><%= link_to(room.room,"/room/#{room.id}/top") %></div>
+        <div class="name">
+          <div class="time"><%= room.created_at.to_s(:datetime_jp) %></div>
+          <h4>部屋主</h4>
+          <h4><%= room.name_id %></h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

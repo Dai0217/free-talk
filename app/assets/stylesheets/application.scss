@@ -1,0 +1,167 @@
+@mixin position{
+  padding:20px 0 0 30px;
+  margin-top:50px;
+  background-color:rgb(220,220,220);
+  height:640px;
+}
+
+.error{
+  height:40px;
+  text-align:center;
+  background-color:lightgreen;
+
+  h4{
+    display:inline-block;
+    font-size:20px;
+    margin:0;
+    padding-top:5px;
+  }
+}
+.header-wrapper{
+  position:fixed;
+  width:100%;
+  height:50px;
+  background-color:rgb(245,245,220);
+  z-index:10;
+  top:0;
+  left:0;
+}
+
+.heading{
+  float:left;
+  h4{
+    margin:15px 0 0 20px;
+  }
+}
+
+.element{
+  float:right;
+  h3{
+    float:left;
+    padding:10px 20px 0 0;
+    font-size:10px;
+  }
+}
+body{
+  margin:0;
+}
+.login{
+  margin-top:50px;
+  position:relative;
+  .container{
+    height:400px;
+    background-color:rgb(255,255,204);
+    position:absolute;
+    text-align:center;
+    top:100px;
+    right:420px;
+    left:420px;
+    margin:auto;
+  }
+  img{
+    width:100%;
+    vertical-align:bottom;
+    height:640px;
+  }
+}
+
+.title p{
+  margin-top:0;
+  padding-top:40px;
+  font-size:30px;
+}
+.title-wrapper{
+  margin-top:50px;
+  height:640px;
+  background-color:rgb(220,220,220);
+
+}
+.btn{
+  margin-top:20px;
+}
+
+.make{
+  padding-left:30px;
+}
+
+.chat-make{
+  @include position;
+}
+.chat-wrapper{
+  height:640px;
+  margin-top:50px;
+  padding-left:30px;
+  background-color:rgb(220,220,220);
+  .exit-wrapper{
+    overflow:auto;
+    h4{
+      padding-right:20px;
+      float:left;
+    }
+  }
+}
+.edit-wrapper{
+  @include position;
+}
+.room-wrapper{
+  position:relative;
+  border-bottom:solid 1px black;
+  padding:20px 0 0 30px;
+  background-color:rgb(220,220,220);
+  overflow:auto;
+  h4{
+    float:left;
+    margin:auto 5px;
+  }
+  .room{
+    width:70%;
+    overflow-wrap:break-word;
+    float:left;
+    margin:auto 5px;
+  }
+
+  .name{
+    position:absolute;
+    bottom:0;
+    right:0;
+    float:right;
+    margin:auto 5px;
+    h4{
+      margin:0 auto;
+      padding-right:10px;
+      float:left;
+
+    }
+  }
+  .time{
+    float:right;
+  }
+}
+
+.chat{
+  margin-top:10px;
+  border-bottom:solid 1px black;
+  position:relative;
+  background-color:rgb(220,220,220);
+  overflow:auto;
+  h4{
+    font-size:16px;
+    margin:0;
+  }
+  .name{
+    float:left;
+  }
+  .sentence{
+    width:89%;
+    overflow-wrap:break-word;
+    float:left;
+    margin-bottom:0;
+  }
+  .time{
+    position:absolute;
+    right:0;
+    bottom:0;
+    margin-bottom:0px;
+    font-size:8px;
+  }
+}

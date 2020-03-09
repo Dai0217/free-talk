@@ -1,0 +1,7 @@
+<div class="edit-wrapper">
+  <h4>ユーザー名編集</h4>
+  <%= form_tag("/user/#{@user.id}/change") do %>
+    <input name="name">
+    <input type="submit" value="変更">
+  <% end %>
+</div>
