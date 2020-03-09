@@ -27,14 +27,14 @@ class UserController < ApplicationController
       @error_message="メールアドレスまたはパスワードが間違っています"
       @email=params[:email]
       @password=params[:password]
-      render("/user/login")
+      render("/user/index")
     end
   end
 
   def logout
     session[:user_name]=nil
     session[:user_id]=nil
-    redirect_to("/user/index")
+    render("/user/index")
   end
 
   def edit
