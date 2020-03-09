@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-  def login
+  def index
   end
 
   def create
@@ -34,7 +34,7 @@ class UserController < ApplicationController
   def logout
     session[:user_name]=nil
     session[:user_id]=nil
-    redirect_to("/user/login")
+    redirect_to("/user/index")
   end
 
   def edit

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'user/login' => "user#login"
+  resources :user
+  root "user#index"
+  get 'user/index' => "user#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "user/create" => "user#create"
   post "user/new" => "user#new"
